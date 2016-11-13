@@ -18,13 +18,13 @@ router.get('/', function(req, res){
   Burger.findAll({
     attributes: ['id', 'burger_name', 'devoured']
   }).then(function(data){
-    info.brgr.push(data);
+    info.brgr = data;
 
     //grab data from menu table
     Menu.findAll({
       attributes: ['id', 'item', 'entree']
     }).then(function(result){
-      info.itm.push(result);
+      info.itm = result;
 
        res.render('index', info);
     });
@@ -42,8 +42,10 @@ router.get('/menu', function(req, res){
 
 //creates a new burger to be devoured
 router.post('/create', function(req, res){
+  var newBurger = req.body.burgerInput;
+
   Burger.create({
-    burger_name: [req.body.burgerInput],
+    burger_name: newBurger,
     devoured: 0
   });
 
