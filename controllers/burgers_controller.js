@@ -15,28 +15,20 @@ router.get('/', function(req, res){
     itm: []
   };
 
-  //grabs data from burger table
   Burger.findAll({
     attributes: ['id', 'burger_name', 'devoured']
   }).then(function(data){
-      var eachBurger = res.json(data);
+    info.brgr.push(data);
 
-      for(var i=0;i<eachBurger.length; i++){
-      info.brgr.push(eachBurger[i]);
-      }
+    //grab data from menu table
+    Menu.findAll({
+      attributes: ['id', 'item', 'entree']
+    }).then(function(result){
+      info.itm.push(result);
 
-      //grab data from menu table
-      Menu.findAll({
-         attributes: ['id', 'item', 'entree']
-      }).then(function(data){
-          var eachMenuItm = res.json(data);
+       res.render('index', info);
+    });
 
-          for(var i=0;i<eachMenuItm.length; i++){
-            info.itm.push(eachMenuItm[i]);
-          }
-        //send it all to the index.handlebars
-          res.render('index', info);
-      });
   });
 });
 
