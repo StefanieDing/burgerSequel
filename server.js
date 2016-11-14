@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 var app = express();
+//connection to the MySQL database
 var connection = require('./config/connection.js');
 
 // Serve static content for the app from the "public" directory in the application directory.
