@@ -1,6 +1,6 @@
 # burgerSequel
 
-Created during Week 15 of Rutgers Coding Bootcamp. Node, Express, Handlebars, and MyS!L burger app that allows user to select a burger or side and then 'devour' it. Remake of my original Burger app found [here](https://github.com/StefanieDing/burger). This uses the Sequelize ORM rather than raw MySQL queries.
+Created during Week 15 of Rutgers Coding Bootcamp. Node, Express, Handlebars, and MySQL burger app that allows user to select a burger or side and then 'devour' it. Remake of my original Burger app found [here](https://github.com/StefanieDing/burger). This uses the Sequelize ORM rather than raw MySQL queries.
 
 ## Getting Started
 (https://peaceful-anchorage-45179.herokuapp.com/)

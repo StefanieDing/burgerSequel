@@ -1,4 +1,4 @@
-var Sequelize = require('sequelize'), connection;
+var Sequelize = require('sequgit elize'), connection;
 
 if (process.env.JAWSDB_URL) {
   connection = new Sequelize(process.env.JAWSDB_URL);
